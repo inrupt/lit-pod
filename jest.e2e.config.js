@@ -27,7 +27,9 @@ module.exports = {
   clearMocks: true,
   // Because we're making HTTP requests that can take a while, tests should be
   // given a little longer to complete:
-  testTimeout: 10000,
+  // Also temporarily increased from 10 to 60 seconds because we're using the
+  // NSS IDP, which is a lot slower:
+  testTimeout: 60000,
   testRegex: "e2e-node/.*.test.ts",
   injectGlobals: false,
 };
